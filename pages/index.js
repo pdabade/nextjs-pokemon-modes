@@ -2,7 +2,11 @@ import Head from 'next/head'
 import Link from 'next/link';
 import styles from '../styles/Home.module.css'
 
-export async function getServerSideProps() {
+//SSR
+// export async function getServerSideProps() {
+
+// SSG
+export async function getStaticProps() {
   const res = await fetch("https://jherr-pokemon.s3.us-west-1.amazonaws.com/index.json");
 
   return {
@@ -13,6 +17,8 @@ export async function getServerSideProps() {
 }
 
 export default function Home({ pokemon }) {
+
+  // CSR
   // const [pokemon, setPokemon] = useState([]);
 
   // useEffect(() => {
